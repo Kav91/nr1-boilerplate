@@ -1,0 +1,7 @@
+{
+    "schemaType": "LAUNCHER",
+    "id": "nr1-boilerplate-launcher",
+    "displayName": "Nr1 Boilerplate Launcher",
+    "description": "Boilerplate Nerdpack",
+    "rootNerdletId": "nr1-boilerplate-nerdlet"
+}

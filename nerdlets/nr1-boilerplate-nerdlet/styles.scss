@@ -1,0 +1,316 @@
+@import url('//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css');
+@import '/css/overrides.css';
+
+.outline-text {
+  color: black;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.react-select-input-right {
+  margin-right: 10px !important;
+
+  // position: relative;
+  // width: 100%;
+  max-width: 325px;
+  // margin-right: 8px;
+
+  label {
+    // position: absolute;
+    // top: 7px;
+    // left: 12px;
+    // z-index: 10;
+    font-size: 10px;
+    // text-transform: uppercase;
+    // letter-spacing: .25px;
+    // color: #6C797A;
+  }
+}
+
+.react-select-input-group {
+  position: relative;
+  width: 100%;
+  max-width: 250px;
+  margin-right: 8px;
+
+  label {
+    position: absolute;
+    top: 7px;
+    left: 12px;
+    z-index: 10;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.25px;
+    color: #6c797a;
+  }
+}
+
+.react-create-input-group {
+  position: relative;
+  width: 100%;
+  max-width: 250px;
+  margin-right: 8px;
+
+  label {
+    position: absolute;
+    top: 5px;
+    left: 12px;
+    z-index: 10;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.25px;
+    color: #6c797a;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 175px;
+  }
+}
+
+.react-select-input-group-wide {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin-right: 8px;
+
+  label {
+    position: absolute;
+    top: 7px;
+    left: 12px;
+    z-index: 10;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.25px;
+    color: #6c797a;
+  }
+}
+
+.react-select__control {
+  height: 45px;
+  font-size: 13px;
+  color: #2a3434;
+  border-radius: 0px;
+}
+
+.react-select__menu {
+  z-index: 11 !important;
+  border-radius: 0px;
+}
+
+.react-select__indicator-separator {
+  display: none;
+}
+
+.react-select__control--is-focused {
+  border-color: #007e8a;
+  box-shadow: 0 0 0 1px #007e8a;
+
+  &:hover {
+    border-color: #007e8a;
+    box-shadow: 0 0 0 1px #007e8a;
+  }
+}
+
+.react-select__option--is-focused {
+  background-color: #007e8a18;
+}
+
+.react-select__option--is-selected {
+  background-color: #007e8a;
+
+  &:hover {
+    background-color: #007e8a;
+  }
+}
+
+.react-select__value-container {
+  top: 8px;
+}
+
+.dropdown-container {
+  display: inline-block;
+}
+
+.flex-push {
+  margin-left: auto;
+}
+
+.utility-bar {
+  width: 100%;
+  height: 60px;
+  background-color: #edeeee;
+  display: flex;
+  // justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 16px;
+  border-top: 1px solid #d5d7d7;
+
+  hr {
+    height: 100%;
+    width: 0px;
+    margin: 16px;
+    border-right: 1px dotted #b9bdbdaf;
+    border-left: 0;
+  }
+}
+
+.attributes-container li {
+  color: #464e4e;
+  display: flex;
+  justify-content: space-between;
+  text-align: right;
+  padding: 7px 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.attribute-name {
+  flex-grow: 0;
+  font-weight: 600;
+  text-align: left;
+  display: inline-block;
+  margin-right: 5px;
+  max-width: 50%;
+  overflow-wrap: break-word;
+}
+
+.attribute-value {
+  flex-grow: 1;
+  color: #464e4e;
+  text-align: right;
+  overflow-wrap: break-word;
+  min-width: 40px;
+}
+
+[class*='Tabs-navigation'] {
+  background-color: #f4f5f5;
+}
+
+.filters-header {
+  display: inline;
+  color: #8e9494;
+  font-size: 10px;
+  text-transform: uppercase;
+  padding-left: 16px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+}
+
+.x-icon {
+  cursor: pointer;
+  margin-left: 3px;
+}
+
+.filters-container {
+  margin-top: 0;
+  padding: 8px 0 8px;
+  background-color: rgb(245, 245, 245);
+}
+
+.ui.input > input {
+  margin: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  -webkit-box-flex: 1 !important;
+  -ms-flex: 1 0 auto !important;
+  flex: 1 0 auto !important;
+  outline: 0 !important;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+  text-align: left !important;
+  line-height: 1.21428571em !important;
+  font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
+  padding: 0.67857143em 1em !important;
+  background: #fff !important;
+  border: 1px solid rgba(34, 36, 38, 0.15) !important;
+  color: rgba(0, 0, 0, 0.87);
+  border-radius: 0.28571429rem !important;
+  -webkit-transition: border-color 0.1s ease, -webkit-box-shadow 0.1s ease !important;
+  transition: border-color 0.1s ease, -webkit-box-shadow 0.1s ease !important;
+  transition: box-shadow 0.1s ease, border-color 0.1s ease !important;
+  transition: box-shadow 0.1s ease, border-color 0.1s ease,
+    -webkit-box-shadow 0.1s ease !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.ui.segment {
+  background: '' !important;
+  padding: 0px !important;
+  border: 0px !important;
+}
+
+.map-sidebar {
+  background-color: #f7f7f8;
+  border-radius: 0px !important;
+  border-left: 1px solid white;
+  border-left-width: 2px;
+  border-left-style: solid;
+  border-left-color: rgb(213, 215, 215);
+}
+
+.flex-container {
+  flex-direction: column;
+  display: flex;
+}
+
+.flex-container-column {
+  flex-direction: column;
+}
+
+.flex-container-row {
+  flex-direction: row;
+}
+
+.fill-space {
+  flex-grow: 1;
+}
+
+.centered {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.icons .icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%) !important;
+  transform: translateX(-50%) translateY(-50%) !important;
+  margin: 0 !important;
+}
+
+.popup-custom {
+  padding: 0px !important;
+}
+
+.ui.inverted.table > tbody > tr > td {
+  background: #333 !important;
+  color: white !important;
+  border: none !important;
+}
+
+.siderbar-header {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: Open Sans, Segoe UI, Tahoma, sans-serif;
+  padding-left: 10px !important;
+  padding-top: 10px !important;
+  text-transform: uppercase;
+  float: left;
+}
+
+.truncate-sidebar > label {
+  width: 350px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.ui.button,
+.ui.buttons .button,
+.ui.buttons .or {
+  font-size: inherit !important;
+}
