@@ -5,7 +5,7 @@ This boilerplate aims to provide a quick start into NR1 application development.
 Demonstrates the use of:
 
 - React Context
-- NR1 NerdGraphQuery, NerdStorage, Charts, Entity Search etc.
+- NR1 NerdGraphQuery, NrqlQuery, NerdStorage, Charts, Entity Search etc.
 - Using third party component libraries
 
 ## Helpful links
@@ -13,6 +13,10 @@ Demonstrates the use of:
 - https://developer.newrelic.com/
 - https://reactjs.org/docs/context.html
 - https://react.semantic-ui.com/
+- https://github.com/newrelic/nr1-workshop
+- https://docs.newrelic.com/docs/apis/nerdgraph/get-started/introduction-new-relic-nerdgraph
+- https://api.newrelic.com/graphiql
+- Source code of NR1 apps: https://github.com/newrelic?q=nr1-
 
 ## Getting Started
 

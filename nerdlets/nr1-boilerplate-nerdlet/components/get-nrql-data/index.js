@@ -3,9 +3,6 @@ import { NrqlQuery } from 'nr1';
 import { Divider, Header, Input } from 'semantic-ui-react';
 import _ from 'lodash';
 
-// https://docs.newrelic.com/docs/new-relic-programmable-platform-introduction
-// https://react.semantic-ui.com/collections/grid/
-
 export default class GetNrqlData extends React.Component {
   constructor(props) {
     super(props);
@@ -31,6 +28,7 @@ export default class GetNrqlData extends React.Component {
     if (accountId !== this.state.accountId) {
       this.setState({ accountId }, () => {
         if (accountId) {
+          // https://developer.newrelic.com/components/nrql-query
           NrqlQuery.query({
             accountId,
             query: nrqlQuery
