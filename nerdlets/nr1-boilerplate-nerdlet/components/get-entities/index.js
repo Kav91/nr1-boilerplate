@@ -1,10 +1,11 @@
 import React from 'react';
 import { DataConsumer } from '../../context/data';
-import { Form } from 'semantic-ui-react';
-import { NerdGraphQuery } from 'nr1';
+import { Form, List, Header } from 'semantic-ui-react';
+import { NerdGraphQuery, navigation } from 'nr1';
 import gql from 'graphql-tag';
 
 // https://docs.newrelic.com/docs/new-relic-programmable-platform-introduction
+// https://developer.newrelic.com/apis/navigation
 // https://react.semantic-ui.com/collections/grid/
 
 export default class GetEntities extends React.Component {
@@ -12,7 +13,8 @@ export default class GetEntities extends React.Component {
     super(props);
     this.state = {
       entitySearchQuery: `domain = 'APM' and reporting = 'true'`,
-      entitySearchCount: null
+      entitySearchCount: null,
+      entities: null
     };
   }
 
@@ -22,6 +24,12 @@ export default class GetEntities extends React.Component {
       actor {
         entitySearch(query: "${entitySearchQuery}") {
           count
+          results {
+            entities {
+              name
+              guid
+            }
+          }
         }
       }
     }`;
@@ -29,15 +37,22 @@ export default class GetEntities extends React.Component {
       query
     }).then(nerdGraphData => {
       const result = nerdGraphData.data;
-      const entitySearchCount =
-        (((result || {}).actor || {}).entitySearch || {}).count || 0;
+      const entitySearchData =
+        ((result || {}).actor || {}).entitySearch || null;
 
-      this.setState({ entitySearchCount });
+      if (entitySearchData) {
+        const entitySearchCount = (entitySearchData || {}).count || 0;
+        // use slice to take first 5 entities
+        const entities =
+          ((entitySearchData || {}).results || {}).entities.slice(0, 5) || null;
+
+        this.setState({ entitySearchCount, entities });
+      }
     });
   };
 
   render() {
-    const { entitySearchQuery, entitySearchCount } = this.state;
+    const { entitySearchQuery, entitySearchCount, entities } = this.state;
 
     return (
       <DataConsumer>
@@ -68,13 +83,37 @@ export default class GetEntities extends React.Component {
                     }
                     content="Save Entity Count"
                     onClick={() => {
-                      this.setState({ entitySearchCount: null }, () => {
-                        updateDataStateContext({ entitySearchCount });
-                      });
+                      this.setState(
+                        { entitySearchCount: null, entities: null },
+                        () => {
+                          updateDataStateContext({ entitySearchCount });
+                        }
+                      );
                     }}
                   />
                 </Form.Group>
               </Form>
+
+              {entities && entities.length > 0 ? (
+                <>
+                  <Header as="h5">First 5 entities</Header>
+                  <List>
+                    {entities.map(e => {
+                      return (
+                        <List.Item
+                          key={e.guid}
+                          style={{ cursor: 'pointer' }}
+                          onClick={() => navigation.openStackedEntity(e.guid)}
+                        >
+                          {e.name}
+                        </List.Item>
+                      );
+                    })}
+                  </List>
+                </>
+              ) : (
+                ''
+              )}
             </div>
           );
         }}

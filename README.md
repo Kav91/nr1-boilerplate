@@ -5,7 +5,7 @@ This boilerplate aims to provide a quick start into NR1 application development.
 Demonstrates the use of:
 
 - React Context
-- NR1 NerdGraphQuery, NrqlQuery, NerdStorage, Charts, Entity Search etc.
+- NR1 components: NerdGraphQuery, NrqlQuery, NerdStorage, Charts, Entity Search etc.
 - Using third party component libraries
 
 ## Helpful links
